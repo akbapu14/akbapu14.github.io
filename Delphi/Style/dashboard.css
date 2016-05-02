@@ -45,7 +45,7 @@ body{
 /* Navigation */
 .navigation{
 	width: 100%;
-	height: 55px;
+	height: 70px;
 	position: fixed;
 	background: white;
 	margin: 0 auto;
@@ -54,7 +54,7 @@ body{
 }
 
 #title{
-	display: inline-block;	
+	display: inline-block;
 	line-height: 55px;
 	margin-left: 20px;
 	color: #4F4F4F;
@@ -85,10 +85,10 @@ body{
 /* Body */
 
 #headliner{
-	position: fixed;
+	position:  fixed;
 	width: 100%;
-	height: 20%;
-	margin-top: 57px;
+	height: 10%;
+	margin-top: 80px;
 	background-color: #F9FAFB;
 	font-family: 'Open Sans';
 	box-shadow: 2px 2px 2px #EAEAEA;
@@ -96,7 +96,7 @@ body{
 }
 
 #my-reports{
-	margin-top: 75px;
+	margin-top: 20px;
 	margin-left: 60px;
 	font-size: 23px;
 }
@@ -107,10 +107,15 @@ body{
 	margin-right: 45px;
 	width: 60px;
 }
+#logo {
+  margin-top: 10px;
+  float:left;
+  width: 150px;
+}
 
 #placeholder-images{
 	position: absolute;
-	margin-top: 220px;
+	margin-top: 170px;
 	margin-left: 60px;
 }
 
