@@ -1,0 +1,28 @@
+/*img{
+    -moz-animation:.6s rotateRight infinite linear;
+    -webkit-animation:.6s rotateRight infinite linear;
+}
+
+@-moz-keyframes rotateRight{
+    0%{ -moz-transform:rotate(0deg); -moz-transform-origin:50% 50%; }
+    100%{ -moz-transform:rotate(360deg); }
+}
+
+@-webkit-keyframes rotateRight{
+    0%{ -webkit-transform:rotate(0deg); -webkit-transform-origin:50% 50%; }*/
+
+img {-moz-animation: 3s rotate infinite linear  ;
+  -moz-transform-origin: 50% 50%;
+  -webkit-animation: 3s rotate infinite linear  ;
+  -webkit-transform-origin: 50% 50%;
+}
+
+@-moz-keyframes rotate {
+    0    { -moz-transform: rotate(0); }
+    100% { -moz-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes rotate {
+    0%    { -webkit-transform: rotate(0); }
+    100% { -webkit-transform: rotate(360deg); }
+}
