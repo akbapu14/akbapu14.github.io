@@ -77,6 +77,42 @@
 </div>
 </div>
     </main>
+    <script type="text/javascript">
+    function getPatents(abstract) {
+      var url = "http://ec2-54-202-211-151.us-west-2.compute.amazonaws.com/patentSearch";
+      var formData = new FormData();
+      var xmlhttp = new XMLHttpRequest();
+      formData.append("abstract", abstract);
+      xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+              if (xmlhttp.responseText == "False") {
+                alert("Bad Request")
+              } else {
+                      var resultsDict = JSON.parse(xmlhttp.responseText)
+                      for (key in resultsDict) {
+                        if (key == "patentInfo") {
+                          alert("Jsonified")
+                          var pInfo = JSON.stringify(resultsDict["patentInfo"])
+                          sessionStorage["patentInfo"] = pInfo
+                        } else {
+                          sessionStorage.setItem(key, resultsDict[key])
+                        }
+                      }
+                      // sessionStorage.setItem("results", resultsDict)
+                      window.location.href = "results.html";
+                  }
+                     }
+          }
+      xmlhttp.open("POST", url);
+      xmlhttp.send(formData);
+    }
+    if ("abstract" in sessionStorage) {
+      console.log("request made")
+      getPatents(sessionStorage["abstract"])
+    } else {
+      alert("Abstract not entered")
+    }
+    </script>
 </body>
 
 </html>
