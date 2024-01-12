@@ -2,7 +2,7 @@
     <!DOCTYPE HTML>
     <html>
         <head>
-            <title>Continuous Snow Animation</title>
+            <title>Snow Animation</title>
             <style>
                 body {
                     margin: 0;
@@ -42,26 +42,19 @@
         <body>
             <div id="snowflakeContainer"></div>
             <script>
-                function createSnowflake() {
+                function createSnowflakes() {
                     var snowflakeContainer = document.getElementById("snowflakeContainer");
-                    var snowflake = document.createElement("div");
-                    snowflake.className = "snowflake";
-                    snowflake.style.left = Math.random() * 100 + '%';
-                    snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                    snowflake.style.animationDelay = Math.random() * 5 + 's';
-                    snowflakeContainer.appendChild(snowflake);
-                    // Remove snowflake after it falls out of view
-                    setTimeout(function() {
-                        snowflakeContainer.removeChild(snowflake);
-                    }, (Math.random() * 3 + 2) * 1000 + 5000);
+                    for (var i = 0; i < 100; i++) {
+                        var snowflake = document.createElement("div");
+                        snowflake.className = "snowflake";
+                        snowflake.style.left = Math.random() * 100 + '%';
+                        snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                        snowflake.style.animationDelay = Math.random() * 5 + 's';
+                        snowflakeContainer.appendChild(snowflake);
+                    }
                 }
-
-                function continuousSnow() {
-                    setInterval(createSnowflake, 200); // Create a new snowflake every 200ms
-                }
-
                 window.onload = function() {
-                    continuousSnow();
+                    createSnowflakes();
                 };
             </script>
         </body>
